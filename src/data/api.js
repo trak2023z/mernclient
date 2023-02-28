@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'https://localhost/api/';
+const apiUrl = 'https://mernserver.herokuapp.com/api/';
 
 export const singleFileUpload = async (data, options) => {
     try {

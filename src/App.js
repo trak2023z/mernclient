@@ -28,7 +28,7 @@ function App() {
   }
 
   const handleDeleteImage = async (id)=>{
-      await axios.delete('https://localhost/api/' + id)
+      await axios.delete('https://mernserver.herokuapp.com/api/' + id)
       setSingleFiles(prev=>prev.filter(file=>file._id !== id))
   }
 
@@ -50,7 +50,7 @@ function App() {
                 {singleFiles.map((file, index) => 
                   <div className="col-6">
                     <div className="card mb-2 border-0 p-0">
-                      <img src={`https://localhost${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
+                      <img src={`https://mernserver.herokuapp.com/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
                       <button size="small" variant="contained" color="secondary" onClick={() => handleDeleteImage(file._id)}>Delete</button>
                       </div>
                   </div>
@@ -66,7 +66,7 @@ function App() {
                       {element.files.map((file, index) =>
                         <div className="col-6">
                             <div className="card mb-2 border-0 p-0">
-                              <img src={`https://localhost/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
+                              <img src={`https://mernserver.herokuapp.com/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
                               </div>
                           </div>
                        )}
